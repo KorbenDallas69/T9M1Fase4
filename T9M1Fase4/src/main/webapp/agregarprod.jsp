@@ -7,15 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="User" method="post">
-Producto:<br>
-<input type="text" name="modelo" value=""><br>
-
-<input type="submit" name="Buscar">
-</form>
 
 <a href="modcantprod.jsp">Modificar Cantidad de un Producto</a>
-<a href="agregarprod.jsp">Agregar un Producto</a>
-
+<a href="consultar.jsp">Buscar Un Producto</a>
+<a href="main.jsp">Menu Principal</a>
 </body>
 </html>
