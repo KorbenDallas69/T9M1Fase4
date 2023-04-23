@@ -37,7 +37,8 @@ public class Newuser extends HttpServlet {
     		
     		if (consultar(user).getId()==0) {
     			boolean registra= new UsuarioDAOImpl().registrar(user);
-    			//registrar(user);
+    			// Revisar la linea de registrar
+    			registrar(user);
     			request.setAttribute("UsuarioRegistrado", "Tu Usuario fue Creado Exitosamente");
     			request.getRequestDispatcher("/index.jsp").forward(request,  response);
     		}

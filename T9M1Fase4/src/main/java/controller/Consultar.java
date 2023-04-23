@@ -32,7 +32,7 @@ public class Consultar extends HttpServlet {
     		
     		// aqui me quede
     		Producto prod= new Producto();
-    		//prod.setModelo(modelo);
+    		prod.setModelo(modelo);
     		
     		 
 

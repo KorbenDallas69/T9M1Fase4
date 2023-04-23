@@ -37,7 +37,7 @@ public class User extends HttpServlet {
     		
     		
     		
-    		// tomar el resultado de query en una variable boleana y dirigir a la pagina de imc o de index en funcion del resultado
+    		// tomar el resultado de query en una variable boleana y dirigir a la pagina main o de index en funcion del resultado
     		boolean valida= new UsuarioDAOImpl().validar(usr);
     		if (valida ==true) {
     			
