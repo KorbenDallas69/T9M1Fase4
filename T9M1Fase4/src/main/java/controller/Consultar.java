@@ -32,18 +32,18 @@ public class Consultar extends HttpServlet {
     		
     		// aqui me quede
     		Producto prod= new Producto();
-    		prod.setModelo(modelo);
+    		//prod.setModelo(modelo);
     		
     		 
 
     		
-    		if (consultar(prod).getItem()!=0) {
+    		if (consultarP(prod).getItem()!=0) {
     			
     			request.setAttribute("Producto Existente", "Encontrado");
     			request.getRequestDispatcher("/main.jsp").forward(request,  response);
     		}
     		else {
-    			request.setAttribute("Error", "Verifica tus datos de usuario");
+    			request.setAttribute("Producto", "No Encontrado");
     			request.getRequestDispatcher("/main.jsp").forward(request,  response);
     		}
     		

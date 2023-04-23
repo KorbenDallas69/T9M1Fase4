@@ -1,8 +1,8 @@
 package modelo;
 
 public interface ProductoDAO {
-	public boolean registrar(Producto producto);
-	public boolean validar(Producto producto);
-	public Producto consultar(Producto producto);
+	public boolean registrarP(Producto producto);
+	public boolean validarP(Producto producto);
+	public Producto consultarP(Producto producto);
 
 }

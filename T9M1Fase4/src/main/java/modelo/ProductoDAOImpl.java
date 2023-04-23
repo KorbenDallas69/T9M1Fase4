@@ -6,7 +6,7 @@ import repo.Conexion;
 
 public class ProductoDAOImpl implements ProductoDAO{
 	@Override
-	public Producto consultar(Producto producto) {
+	public Producto consultarP(Producto producto) {
 		Statement stm = null;
 		Connection conn = null;
 		ResultSet rs = null;
@@ -33,13 +33,13 @@ public class ProductoDAOImpl implements ProductoDAO{
 	}
 
 	@Override
-	public boolean registrar(Producto producto) {
+	public boolean registrarP(Producto producto) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean validar(Producto producto) {
+	public boolean validarP(Producto producto) {
 		// TODO Auto-generated method stub
 		return false;
 	}
