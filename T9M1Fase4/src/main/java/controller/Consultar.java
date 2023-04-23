@@ -9,15 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.Usuario; 
-import modelo.UsuarioDAO;
-import modelo.UsuarioDAOImpl;
+import modelo.Producto; 
+import modelo.ProductoDAO;
+import modelo.ProductoDAOImpl;
 
 /**
  * Servlet implementation class User
  */
-@WebServlet(name="/User", urlPatterns = {"/User"})
-public class User extends HttpServlet {
+@WebServlet(name="/Consultar", urlPatterns = {"/Consultar"})
+public class Consultar extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -27,26 +27,24 @@ public class User extends HttpServlet {
     throws ServletException, IOException{
     	response.setContentType("text/html;charser=UTF-8");
     	try (PrintWriter out = response.getWriter()){
-    		String usuario = request.getParameter("usuario");
-    		String password = request.getParameter("password");
-    		
-    		// hay que pasar estos valores usuario y password de la pagina de entrada al query para validar
-    		Usuario usr= new Usuario();
-    		usr.setUsuario(usuario);
-    		usr.setPassword(password);
+    		String modelo = request.getParameter("modelo");
     		
     		
+    		// aqui me quede
+    		Producto prod= new Producto();
+    		prod.setModelo(modelo);
     		
-    		// tomar el resultado de query en una variable boleana y dirigir a la pagina de imc o de index en funcion del resultado
-    		boolean valida= new UsuarioDAOImpl().validar(usr);
-    		if (valida ==true) {
+    		 
+
+    		
+    		if (consultar(prod).getItem()!=0) {
     			
-    			request.setAttribute("Usuario Existente", "Bienvenido");
+    			request.setAttribute("Producto Existente", "Encontrado");
     			request.getRequestDispatcher("/main.jsp").forward(request,  response);
     		}
     		else {
     			request.setAttribute("Error", "Verifica tus datos de usuario");
-    			request.getRequestDispatcher("/index.jsp").forward(request,  response);
+    			request.getRequestDispatcher("/main.jsp").forward(request,  response);
     		}
     		
     	}

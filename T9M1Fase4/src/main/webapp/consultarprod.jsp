@@ -4,11 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Buscar Producto</title>
 </head>
 <body>
-
-<a href="main.jsp">Menu Principal</a>
+Captura el Modelo del Producto a Consultar<br>
+<br>
+<form action="Consultar" method="post">
+	Modelo:<br>
+	<input type="text" name="modelo" value=""><br>
+	
+	<input type="submit" value="Consultar"><br>
+</form>
+<a href="main.jsp">Menu Principal</a><br>
+<a href="modcantprod.jsp">Modificar Cantidad de un Producto</a><br>
 <a href="agregarprod.jsp">Agregar un Producto</a>
 </body>
 </html>

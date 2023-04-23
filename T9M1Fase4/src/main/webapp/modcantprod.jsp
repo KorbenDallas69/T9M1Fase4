@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Modificar Producto</title>
 </head>
 <body>
+Modifica la Cantidad del Producto Consultado<br>
+<br>
 
-<a href="agregarprod.jsp">Modificar Cantidad de un Producto</a>
-<a href="consultar.jsp">Buscar Un Producto</a>
-<a href="main.jsp">Menu Principal</a>
+<a href="agregarprod.jsp">Agregar un Producto</a><br>
+<a href="consultarprod.jsp">Buscar Un Producto</a><br>
+
 </body>
 </html>
