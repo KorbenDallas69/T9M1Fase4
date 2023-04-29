@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +16,12 @@ Captura el Modelo del Producto a Consultar<br>
 	
 	<input type="submit" value="Consultar"><br>
 </form>
+
 <a href="modcantprod.jsp">Modificar Cantidad de un Producto</a><br>
-<a href="agregarprod.jsp">Agregar un Producto</a>
+<br>
+<a href="agregarprod.jsp">Agregar un Producto</a><br>
+<br>
+<a href="index.jsp">Loggear Otro Usuario</a>
 
 </body>
 </html>

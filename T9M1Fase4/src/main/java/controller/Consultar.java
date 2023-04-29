@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import modelo.Producto; 
-import modelo.ProductoDAO;
-import modelo.ProductoDAOImpl;
+import modelo.*;
+
 
 /**
  * Servlet implementation class User
@@ -30,17 +29,20 @@ public class Consultar extends HttpServlet {
     		String modelo = request.getParameter("modelo");
     		
     		
-    		// aqui me quede
-    		Producto prod= new Producto();
-    		prod.setModelo(modelo);
     		
-    		 
-
-    		
-    		if (consultarP(prod).getItem()!=0) {
+    		Producto p= new Producto();
+    		p.setModelo(modelo);
+    		boolean valida= new ProductoDAOImpl().validarP(p);
+    		if (valida ==true) {
     			
-    			request.setAttribute("Producto Existente", "Encontrado");
-    			request.getRequestDispatcher("/main.jsp").forward(request,  response);
+    			// aqui me quede, modificar la linea para guardar el resultado, la siguiente linea esta incmpleta
+    			Producto producto = new Producto();
+    			//ProductoDAO dao=new ProductoDAOImpl();
+    			//dao.consultarP(producto);
+    			producto=consultarP(p);
+   			
+    			request.setAttribute("Producto", producto);
+    			request.getRequestDispatcher("/muestraconsulta.jsp").forward(request,  response);
     		}
     		else {
     			request.setAttribute("Producto", "No Encontrado");
@@ -49,6 +51,8 @@ public class Consultar extends HttpServlet {
     		
     	}
     }
+
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -65,5 +69,13 @@ public class Consultar extends HttpServlet {
 		// TODO Auto-generated method stub
 		processRequest(request,response);
 	}
+	
+	private Producto consultarP(Producto prod) {
+		// TODO Auto-generated method stub
+		ProductoDAO dao=new ProductoDAOImpl();
+		return dao.consultarP(prod);
+	}
 
-}
+	}
+
+
