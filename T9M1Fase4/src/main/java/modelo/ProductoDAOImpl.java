@@ -39,8 +39,27 @@ public class ProductoDAOImpl implements ProductoDAO{
 
 	@Override
 	public boolean registrarP(Producto producto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean registrarp=false;
+		Statement stm = null;
+		Connection conn = null;
+		ResultSet rs = null;
+
+		String sql = "insert into inventario.producto (item,qtyc,modeloc,marcac,descripcionc,proveedorc)"+
+		"values(null,'"+producto.getQty()+"', '"+producto.getModelo()+"','"+producto.getMarca()+"','"+producto.getDescripcion()+"','"+producto.getProvdr()+"');";
+		
+		try {
+			conn = Conexion.conectar();
+			stm = conn.createStatement();
+			stm.execute(sql);
+			registrarp=true;
+			stm.close();
+			conn.close();
+		} catch (SQLException e) {
+			System.out.println("Error: No se pudo registrar el producto.");
+			e.printStackTrace();
+		}
+		
+		return registrarp;
 	}
 
 	@Override

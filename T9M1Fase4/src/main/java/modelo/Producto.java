@@ -9,10 +9,10 @@ public class Producto {
 	private String descripcion;
 	private String provdr;
 	
-	public Producto (int item, int qty, String modelo, String marca, String descripcion, String provdr) {
+	public Producto (String qty, String modelo, String marca, String descripcion, String provdr) {
 		
-		this.item=item;
-		this.qty=qty;
+	//	this.item=item;
+		this.qty=Integer.parseInt(qty);
 		this.modelo=modelo;
 		this.marca=marca;
 		this.descripcion=descripcion;
