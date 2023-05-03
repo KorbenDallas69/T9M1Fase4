@@ -31,6 +31,8 @@ Resultado de la Consulta<br>
 <br>
 <a href="agregarprod.jsp">Agregar un Producto</a><br>
 <br>
+<a href="consultarprod.jsp">Buscar Un Producto</a><br>
+<br>
 <a href="index.jsp">Loggear Otro Usuario</a>
 
 </body>

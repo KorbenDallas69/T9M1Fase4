@@ -11,7 +11,9 @@ Modifica la Cantidad del Producto Consultado<br>
 <br>
 
 <a href="agregarprod.jsp">Agregar un Producto</a><br>
+<br>
 <a href="consultarprod.jsp">Buscar Un Producto</a><br>
+<br>
 
 </body>
 </html>
